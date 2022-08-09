@@ -1,6 +1,8 @@
 import React from "react";
 import profile from "../../Images/profile.png";
 import "../../App.css";
+
+
 export const About = () => {
   return (
     <section className="hero mt-2">
@@ -16,13 +18,13 @@ export const About = () => {
               <h2 className="text-start  display-8">
                 Working As Web Developer
               </h2>
-
+              
             </div>
             <div className="col-md-6 ">
               <img
                 src={profile}
                 alt="profile"
-                className="rounded-circle"
+                className={`rounded-circle profileImg`}
                 style={{ height: "80%", zIndex: "6", padding: "20%" }}
               />
             </div>
