@@ -5,6 +5,7 @@ import { About } from "./components/About/About";
 import { Skills } from "./components/Skills/Skills";
 import { Projects } from "./components/Projects/Projects";
 import { Mails } from "./components/Mails/Mails";
+import { Description } from "./components/Description/Description";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <Nav />
       <div id="about">
         <About />
+      </div>
+      <div id="description">
+        <Description />
       </div>
       <div id="skills">
         <Skills />

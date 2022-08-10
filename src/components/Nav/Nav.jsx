@@ -5,10 +5,10 @@ export const Nav = () => {
   return (
     <div ><nav className="navbar navbar-expand-sm bg-dark navbar-dark " style={{position:"fixed",width:"100%", top:"0", zIndex:"6"}}>
     <div className="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav ">
         <li className="nav-item">
           <a className="nav-link active" href="#about">About Me</a>
