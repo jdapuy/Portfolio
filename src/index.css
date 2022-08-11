@@ -85,7 +85,7 @@ code {
   padding: 30px 40px;
   background-color: #ffffff;
   border-radius: 12px;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .contact-form textarea {
@@ -162,7 +162,27 @@ code {
   .profileImg{display:none !important
   }
   .hero{padding-bottom: 15%;}
+  .nameSoftskill{
+    margin-top: 7em !important ;
+   }
 }
+
+@media screen and (max-width:250px) {
+ .iconSoftskills{
+  display:none !important
+ }
+ .nameSoftskill{
+  position: relative;
+  margin-top: 1% !important ;
+ }
+ .contact-form{
+  width: 80%;
+ }
+ .contact-form .submit-button-wrapper input {
+  padding: 2px;
+ }
+}
+
 
 /* ////////////////button /////////////////*/
 /* From uiverse.io by @barisdogansutcu */

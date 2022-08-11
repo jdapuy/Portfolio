@@ -11,7 +11,7 @@ export const SoftSkills = () => {
     position: "absolute",
     zIndex: "2",
     transform: "rotate(0.085turn)",
-    
+
   };
   const styleTitleIcon = {
     position: "relative",
@@ -25,12 +25,13 @@ export const SoftSkills = () => {
     <div className=" p-3">
       <div className="row justify-content-sm-center">
 
-        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-sm-center  ">
+        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center  ">
           <IconContext.Provider
             value={{
               color: "#2852a8",
               size: "10em",
-              className: "global-class-name ",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={styleBgIcon}>
@@ -41,21 +42,23 @@ export const SoftSkills = () => {
             value={{
               color: "white",
               size: "4em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={icon}>
               <HiUserGroup />
             </div>
           </IconContext.Provider>
-          <h3 style={styleTitleIcon}>Teamwork</h3>
+          <h3 className="nameSoftskill" style={styleTitleIcon}>Teamwork</h3>
         </div>
-        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-sm-center ">
+        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
               color: "#2852a8",
               size: "10em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={styleBgIcon}>
@@ -66,21 +69,23 @@ export const SoftSkills = () => {
             value={{
               color: "white",
               size: "4em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={icon}>
               <RiEqualizerFill />
             </div>
-            <h3 style={styleTitleIcon}>Adaptability</h3>
           </IconContext.Provider>
+          <h3 className="nameSoftskill" style={styleTitleIcon}>Adaptability</h3>
         </div>
-        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-sm-center ">
+        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
               color: "#2852a8",
               size: "10em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={styleBgIcon}>
@@ -91,21 +96,23 @@ export const SoftSkills = () => {
             value={{
               color: "white",
               size: "4em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={icon}>
               <FaTools />
             </div>
-            <h3 style={styleTitleIcon}>Problem solving</h3>
+            <h3 className="nameSoftskill" style={styleTitleIcon}>Problem solving</h3>
           </IconContext.Provider>
         </div>
-        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-sm-center ">
+        <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
               color: "#2852a8",
               size: "10em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={styleBgIcon}>
@@ -116,13 +123,14 @@ export const SoftSkills = () => {
             value={{
               color: "white",
               size: "4em",
-              className: "global-class-name",
+              className: "iconSoftskills",
+              
             }}
           >
             <div style={icon}>
               <TbReportSearch />
             </div>
-            <h3 style={styleTitleIcon}>Analytical</h3>
+            <h3 className="nameSoftskill" style={styleTitleIcon}>Analytical</h3>
           </IconContext.Provider>
         </div>
    

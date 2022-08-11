@@ -17,7 +17,7 @@ export const Projects = () => {
       <div className="row d-flex justify-content-sm-around flex-wrap">
         {/* <div className="col-sm-1 "></div> */}
 
-        <ul className="d-flex justify-content-sm-around flex-wrap text-decoration-none col-sm-10">
+        <ul className="d-flex justify-content-around flex-wrap text-decoration-none col-sm-10">
           <li className="p-2 d-flex list-unstyled">
             <div className={styles.card}>
               <div className={styles.cardImg}>

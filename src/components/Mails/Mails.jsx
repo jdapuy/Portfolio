@@ -93,7 +93,7 @@ export const Mails = () => {
               name="message"
             />
             <div className="submit-button-wrapper">
-              <input type="submit" value="Send" />
+              <input type="submit" className="submitContact" value="Send" />
             </div>
           </form>
         </div>

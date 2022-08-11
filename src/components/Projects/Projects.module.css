@@ -25,6 +25,17 @@
        }
 }
 
+@media screen and (max-width: 250px) {
+    .card{width: 150px !important}
+    .containerProj{
+        padding-top: 75% !important
+    }
+    .subtitleP {
+        margin-top: 75% !important
+        
+       }
+}
+
 
 
 .containerProj{

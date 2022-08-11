@@ -17,7 +17,7 @@ export const Description = () => {
               <p className="text-start p-4 border border-dark ">
                 Hi! ✌...I´m from Costa Rica 🌎, I´m a web developer with a
                 software engineering diploma 🎓, with clear goals and desires to
-                continue improving myself 🚀, learning new technologies and
+                continue improving myself 🚀, I´m learning new technologies and
                 motivated to continue growing as professional
                 <br />
                 I love visiting new places with my beagle Archie 🐶 and my
@@ -30,7 +30,7 @@ export const Description = () => {
           </div>
         </div>
         <div className="col pb-5"></div>
-        <div className="custom-shape-divider-bottom-1659918871">
+        <div className="custom-shape-divider-bottom-1659918871 p-0">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
