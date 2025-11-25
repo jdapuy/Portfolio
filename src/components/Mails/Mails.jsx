@@ -1,10 +1,23 @@
 import React, { useRef } from "react";
+import { useSpring, animated } from "@react-spring/web";
+import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 export const Mails = () => {
   const form = useRef();
+  
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2
+  });
+
+  const formAnimation = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0px)' : 'translateY(50px)',
+    config: { mass: 1, tension: 120, friction: 26 }
+  });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -43,7 +56,7 @@ export const Mails = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#C4DDFF", position: "relative" }}>
+    <div style={{ backgroundColor: "#f5f5f5", position: "relative" }}>
       <div className="custom-shape-divider-top-1659926912 ">
         <svg
           data-name="Layer 1"
@@ -58,9 +71,9 @@ export const Mails = () => {
         </svg>
       </div>
       <div className="pt-5 mt-5">
-        <h1 className="text-center pt-5 mt-5 display-3">Contact</h1>
-        <div className="contact-form-wrapper d-flex justify-content-center pt-5">
-          <form ref={form} onSubmit={sendEmail} className="contact-form pt-5">
+        <h1 className="text-center pt-5 mt-5 display-3" style={{fontWeight: "800", color: "#000000", letterSpacing: "3px", textTransform: "uppercase"}}>Contact</h1>
+        <div className="contact-form-wrapper d-flex justify-content-center pt-5" ref={ref}>
+          <animated.form style={formAnimation} ref={form} onSubmit={sendEmail} className="contact-form pt-5">
             <h5 className="title">Email Form</h5>
             <p className="description">
               Feel free to contact me!!
@@ -95,7 +108,7 @@ export const Mails = () => {
             <div className="submit-button-wrapper">
               <input type="submit" className="submitContact" value="Send" />
             </div>
-          </form>
+          </animated.form>
         </div>
       </div>
     </div>

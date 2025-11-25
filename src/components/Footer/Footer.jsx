@@ -1,19 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { IconContext } from "react-icons";
 import { SiLinkedin,SiGithub,SiInstagram,SiWhatsapp} from "react-icons/si";
+import { FaArrowUp } from "react-icons/fa";
+import './Footer.css';
+
 export const Footer = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="bg-dark">
-    <div className=" p-4 bg-dark text-white text-center d-flex justify-content-between">
-      <div className="col-sm-2"></div>
+    <>
+    <div className="footer-container">
+    <div className="footer-content">
       <IconContext.Provider
             value={{
-              color: "#f9f9f9",
+              color: "#000000",
               size: "2em",
-              className: "global-class-name",
+              className: "footer-icon",
             }}
           >
-            <div>
+            <div className="footer-icon-wrapper">
             <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -21,15 +39,9 @@ export const Footer = () => {
                   >
             <SiLinkedin/>
             </a>
-            </div> </IconContext.Provider>
-            <IconContext.Provider
-            value={{
-              color: "#f9f9f9",
-              size: "2em",
-              className: "global-class-name",
-            }}
-          >
-            <div>
+            </div>
+            
+            <div className="footer-icon-wrapper">
             <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -37,31 +49,19 @@ export const Footer = () => {
                   >
             <SiGithub/>
             </a>
-            </div> </IconContext.Provider>
-            <IconContext.Provider
-            value={{
-              color: "#f9f9f9",
-              size: "2em",
-              className: "global-class-name",
-            }}
-          >
-            <div><a
+            </div>
+            
+            <div className="footer-icon-wrapper">
+            <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/diego.apuy/"
                   >
              <SiInstagram/>
             </a>
-           
-            </div> </IconContext.Provider>
-            <IconContext.Provider
-            value={{
-              color: "#f9f9f9",
-              size: "2em",
-              className: "global-class-name ",
-            }}
-          >
-            <div>
+            </div>
+            
+            <div className="footer-icon-wrapper">
             <a
                     target="_blank"
                     rel="noopener noreferrer"
@@ -69,13 +69,22 @@ export const Footer = () => {
                   >
              <SiWhatsapp/>
             </a>
-            </div> </IconContext.Provider>
-            
-            <div className="col-sm-2"></div>
-            
+            </div>
+            </IconContext.Provider>
+
 
 </div>
-<p style={{color: "#f9f9f9", margin:"0"}}>© 2022 Juan Diego Apuy V. All rights reserved.</p>
+<p className="footer-copyright">© 2025 Juan Diego Apuy V. All rights reserved.</p>
 </div>
+
+{/* Scroll to top button */}
+<button 
+  className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`}
+  onClick={scrollToTop}
+  aria-label="Scroll to top"
+>
+  <FaArrowUp />
+</button>
+</>
   )
 }

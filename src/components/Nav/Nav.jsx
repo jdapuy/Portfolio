@@ -1,36 +1,68 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import cv from "../../CV/CV.pdf";
+import './Nav.css';
 
 export const Nav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div ><nav className="navbar navbar-expand-sm bg-dark navbar-dark " style={{position:"fixed",width:"100%", top:"0", zIndex:"6"}}>
-    <div className="container-fluid">
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul className="navbar-nav ">
-        <li className="nav-item">
-          <a className="nav-link active" href="#about">About Me</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" href="#skills">Skills</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" href="#projects">Projects</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" href="#mails">Contact</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link active" href="#footer">Footer</a>
-        </li>
-        <li className="nav-item"><a className="nav-link active" style={{zIndex:"6"}} href={cv} download="CV Juan Diego Apuy FullStack">
-              CV
-        </a> </li>
-      </ul>
-    </div>
-    </div>
-  </nav></div>
-  )
-}
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
+      <div className="container">
+        <a className="navbar-brand" href="#about" style={{ 
+          fontWeight: '800', 
+          fontSize: '1.5rem',
+          color: '#000000',
+          letterSpacing: '2px'
+        }}>
+          DA
+        </a>
+        <button 
+          className="navbar-toggler border-0" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav"
+          style={{ color: 'white' }}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto align-items-center">
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="#about">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="#description">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="#skills">Skills</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="#projects">Projects</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link nav-link-custom" href="#mails">Contact</a>
+            </li>
+            <li className="nav-item">
+              <a 
+                className="btn btn-cv" 
+                href={cv} 
+                download="Juan Diego Apuy Villalobos – Full Stack Web Developer"
+              >
+                Download CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};

@@ -1,0 +1,125 @@
+.description-section {
+  background: #ffffff;
+  position: relative;
+  padding: 80px 0;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 60px;
+  border: 2px solid #000000;
+  position: relative;
+  box-shadow: 15px 15px 0px #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 18px 18px 0px #f5f5f5;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #000000;
+}
+
+.about-content {
+  margin-top: 2rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #000000;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.custom-shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(153% + 1.3px);
+  height: 211px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+  fill: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 30px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+

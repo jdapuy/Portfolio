@@ -11,15 +11,15 @@ export const SoftSkills = () => {
     position: "absolute",
     zIndex: "2",
     transform: "rotate(0.085turn)",
-
   };
   const styleTitleIcon = {
     position: "relative",
-    color: "#2852a8",
+    color: "#000000",
     marginTop: "6em",
     width: "6em",
+    fontWeight: "700",
   };
-  const icon = { position: "absolute", margin: "3em", zIndex: "2" };
+  const icon = { position: "absolute", margin: "3em", zIndex: "3" };
 
   return (
     <div className=" p-3">
@@ -28,7 +28,7 @@ export const SoftSkills = () => {
         <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center  ">
           <IconContext.Provider
             value={{
-              color: "#2852a8",
+              color: "#e0e0e0",
               size: "10em",
               className: "iconSoftskills",
               
@@ -40,7 +40,7 @@ export const SoftSkills = () => {
           </IconContext.Provider>
           <IconContext.Provider
             value={{
-              color: "white",
+              color: "#000000",
               size: "4em",
               className: "iconSoftskills",
               
@@ -55,7 +55,7 @@ export const SoftSkills = () => {
         <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
-              color: "#2852a8",
+              color: "#e0e0e0",
               size: "10em",
               className: "iconSoftskills",
               
@@ -67,7 +67,7 @@ export const SoftSkills = () => {
           </IconContext.Provider>
           <IconContext.Provider
             value={{
-              color: "white",
+              color: "#000000",
               size: "4em",
               className: "iconSoftskills",
               
@@ -82,7 +82,7 @@ export const SoftSkills = () => {
         <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
-              color: "#2852a8",
+              color: "#e0e0e0",
               size: "10em",
               className: "iconSoftskills",
               
@@ -94,7 +94,7 @@ export const SoftSkills = () => {
           </IconContext.Provider>
           <IconContext.Provider
             value={{
-              color: "white",
+              color: "#000000",
               size: "4em",
               className: "iconSoftskills",
               
@@ -109,7 +109,7 @@ export const SoftSkills = () => {
         <div className="col-sm-2 m-4 d-flex flex-wrap justify-content-center ">
           <IconContext.Provider
             value={{
-              color: "#2852a8",
+              color: "#e0e0e0",
               size: "10em",
               className: "iconSoftskills",
               
@@ -121,7 +121,7 @@ export const SoftSkills = () => {
           </IconContext.Provider>
           <IconContext.Provider
             value={{
-              color: "white",
+              color: "#000000",
               size: "4em",
               className: "iconSoftskills",
               

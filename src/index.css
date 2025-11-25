@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9f9f9;
+  background: #ffffff;
+  overflow-x: hidden;
 }
 
 code {
@@ -31,7 +36,7 @@ code {
 }
 
 .custom-shape-divider-bottom-1659918871 .shape-fill {
-  fill: #C4DDFF;
+  fill: #f5f5f5;
 }
 .custom-shape-divider-top-1659919788 {
   position: absolute;
@@ -50,7 +55,7 @@ code {
 }
 
 .custom-shape-divider-top-1659919788 .shape-fill {
-  fill: #C4DDFF;
+  fill: #f5f5f5;
 }
 
 
@@ -72,7 +77,7 @@ code {
 }
 
 .custom-shape-divider-top-1659926912 .shape-fill {
-  fill: #F9F9F9;
+  fill: #ffffff;
 }
 
 /* form */
@@ -82,10 +87,13 @@ code {
 }
 
 .contact-form {
-  padding: 30px 40px;
+  padding: 40px 60px;
   background-color: #ffffff;
   border-radius: 12px;
-  max-width: 100%;
+  max-width: 800px;
+  width: 100%;
+  border: 3px solid #000000;
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form textarea {
@@ -95,14 +103,18 @@ code {
 .contact-form .form-input,
 .form-text-area {
   background-color: #f0f4f5;
-  height: 50px;
-  padding-left: 16px;
+  height: 55px;
+  padding: 0 20px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
 }
 
 .contact-form .form-text-area {
   background-color: #f0f4f5;
   height: auto;
-  padding-left: 16px;
+  padding: 15px 20px;
+  min-height: 150px;
 }
 
 .contact-form .form-control::placeholder {
@@ -122,20 +134,25 @@ code {
 }
 
 .contact-form .form-control:focus {
-  border-color: #f33fb0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #f33fb0;
+  border-color: #000000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
 .contact-form .title {
   text-align: center;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .contact-form .description {
-  color: #aeb4b9;
-  font-size: 14px;
+  color: #666666;
+  font-size: 16px;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .contact-form .submit-button-wrapper {
@@ -143,18 +160,24 @@ code {
 }
 
 .contact-form .submit-button-wrapper input {
-  border: none;
-  border-radius: 4px;
-  background-color: #2852a8;
+  border: 3px solid #000000;
+  border-radius: 0;
+  background-color: #000000;
   color: white;
   text-transform: uppercase;
-  padding: 10px 60px;
-  font-weight: 500;
-  letter-spacing: 2px;
+  padding: 15px 70px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
 }
 
 .contact-form .submit-button-wrapper input:hover {
-  background-color: #1b3569;
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -176,7 +199,8 @@ code {
   margin-top: 1% !important ;
  }
  .contact-form{
-  width: 80%;
+  width: 90%;
+  padding: 30px 40px;
  }
  .contact-form .submit-button-wrapper input {
   padding: 2px;
@@ -238,16 +262,96 @@ code {
   animation: docs 1s infinite;
  }
  
- @keyframes docs {
+@keyframes docs {
   0% {
    transform: translateY(0%);
   }
- 
+
   50% {
    transform: translateY(-15%);
   }
- 
+
   100% {
    transform: translateY(0%);
   }
- }
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #333333;
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
